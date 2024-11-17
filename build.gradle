@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 group = 'com.github.Raptor-waniwani'
 version = '1.0-SNAPSHOT'
@@ -17,13 +18,12 @@ repositories {
 
 dependencies {
 compileOnly "io.github.waterfallmc:waterfall-api:1.20-R0.1-SNAPSHOT"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 def targetJavaVersion = 8
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
@@ -45,4 +45,16 @@ processResources {
     filesMatching('bungee.yml') {
         expand props
     }
+}
+buildscript {
+    ext.kotlin_version = '2.0.21'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+kotlin {
+    jvmToolchain(8)
 }

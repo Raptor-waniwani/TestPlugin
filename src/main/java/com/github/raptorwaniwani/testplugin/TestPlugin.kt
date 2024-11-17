@@ -1,16 +1,13 @@
-package com.github.raptorwaniwani.testplugin;
+package com.github.raptorwaniwani.testplugin
 
-import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.api.plugin.Plugin
 
-public final class TestPlugin extends Plugin {
-
-    @Override
-    public void onEnable() {
-        System.out.println("aassssaaaa");
+class TestPlugin : Plugin() {
+    override fun onEnable() {
+        print("aassssaaaa")
     }
 
-    @Override
-    public void onDisable() {
+    override fun onDisable() {
         // Plugin shutdown logic
     }
 }
