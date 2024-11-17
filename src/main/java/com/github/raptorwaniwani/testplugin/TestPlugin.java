@@ -6,7 +6,7 @@ public final class TestPlugin extends Plugin {
 
     @Override
     public void onEnable() {
-        System.out.println("aaa");
+        System.out.println("aaaaaa");
     }
 
     @Override
