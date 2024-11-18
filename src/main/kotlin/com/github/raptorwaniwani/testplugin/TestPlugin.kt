@@ -4,7 +4,7 @@ import net.md_5.bungee.api.plugin.Plugin
 
 class TestPlugin : Plugin() {
     override fun onEnable() {
-        print("aassssaaaa")
+        println("aassssaaaa")
     }
 
     override fun onDisable() {
